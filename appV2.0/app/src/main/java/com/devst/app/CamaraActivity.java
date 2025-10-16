@@ -44,18 +44,7 @@ public class CamaraActivity extends AppCompatActivity {
                     Toast.makeText(this, "Captura cancelada", Toast.LENGTH_SHORT).show();
                 }
             });
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_camara);
-
-        Button btnTomarFoto = findViewById(R.id.btnTomarFoto);
-        imagenPrevia = findViewById(R.id.imgPreview);
-
-        btnTomarFoto.setOnClickListener(v -> checkPermisoYTomar());
-    }
+    
     private void checkPermisoYTomar() {
         boolean granted = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA)
                 == PackageManager.PERMISSION_GRANTED;

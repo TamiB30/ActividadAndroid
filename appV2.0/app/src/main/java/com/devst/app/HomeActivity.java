@@ -1,11 +1,13 @@
 package com.devst.app;
 
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.hardware.camera2.CameraManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.provider.Settings;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,6 +33,7 @@ public class HomeActivity extends AppCompatActivity {
     private CameraManager camara;
     private String camaraID = null;
     private boolean luz = false;
+    private Intent mapIntent;
 
     //Función para capturar resultados para el perfil.
     private final ActivityResultLauncher<Intent> editarPerfilLauncher =
@@ -44,6 +47,7 @@ public class HomeActivity extends AppCompatActivity {
             });
 
 
+    @SuppressLint("QueryPermissionsNeeded")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,20 +62,14 @@ public class HomeActivity extends AppCompatActivity {
         Button btnCompartir = findViewById(R.id.btnCompartir);
         Button btnFlash = findViewById(R.id.btnFlash);
         Button btnCamara = findViewById(R.id.btnCamara);
+        Button btnConfiguracion = findViewById(R.id.btnConfiguracion);
+        Button btnMapa = findViewById(R.id.btnMapa);
 
         //Recibir datos desde el login.
         emailUsuario = getIntent().getStringExtra("email_usuario");
         if(emailUsuario == null) emailUsuario = "";
         tvBienvenida.setText("Bienvenido: " + emailUsuario);
 
-        //Lanzador para pedir permiso de cámara en tiempo de ejecución.
-        private final ActivityResultLauncher<String>permisoCamaraLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted ->{
-            if (granted){
-                alternarFlash();  //Si concede permiso, se intenta prender y apagar la linterna.
-            }else{
-                Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
-            }
-        });
 
         //Evento Explicito iniciar vista perfil.
         btnIrPerfil.setOnClickListener(View -> {
@@ -82,7 +80,7 @@ public class HomeActivity extends AppCompatActivity {
 
         //Evento Inplicito para abrir una pagina web.
         btnAbrirWeb.setOnClickListener(view -> {
-            Uri url = Uri.parse("http://www.santotomas.cl");
+            Uri url = Uri.parse("https://www.todotoner.cl");
             Intent viewWeb = new Intent(Intent.ACTION_VIEW, url);
             startActivity(viewWeb);
         });
@@ -105,6 +103,20 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(compartir, "Compartiendo: "));
         });
 
+        //Evento Implicito Configuración.
+        btnConfiguracion.setOnClickListener(view -> {
+            Intent configuracion = new Intent(Settings.ACTION_WIFI_SETTINGS);
+            startActivity(configuracion);
+        });
+
+        //Evento Implicito Mapa en GoogleMaps.
+        btnMapa.setOnClickListener(view -> {
+            Uri gmmIntentUri = Uri.parse("geo:-33.449303, -70.662225?q=Instituto Santo Tomás");
+            Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+            mapIntent.setPackage("com.google.android.apps.maps");
+            startActivity(mapIntent);
+
+        });
 
     }
 }
