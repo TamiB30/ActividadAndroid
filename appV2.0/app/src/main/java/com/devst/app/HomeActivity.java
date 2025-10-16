@@ -110,10 +110,7 @@ public class HomeActivity extends AppCompatActivity {
         btnCamara.setOnClickListener(view -> {
             Intent camara = new Intent(HomeActivity.this, CamaraActivity.class);
             editarPerfilLauncher.launch(camara);
-
         });
-
-
     }
 
     private void alternarFlash() {
