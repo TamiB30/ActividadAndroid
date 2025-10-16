@@ -7,23 +7,5 @@
     android:layout_height="match_parent"
     tools:context=".CamaraActivity">
 
-    <ImageView
-        android:id="@+id/tvCamara"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
-    <Button
-        android:id="@+id/btnTomarFoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/space_20"
-        android:layout_marginStart="165dp"
-        android:layout_marginEnd="165dp"
-        android:background="@drawable/bg_button_primary"
-        android:text="Foto"
-        android:textColor="@color/on_primary"
-        android:textStyle="bold"
-        android:paddingTop="14dp"
-        android:paddingBottom="14dp"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
