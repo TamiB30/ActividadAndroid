@@ -23,7 +23,7 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 
-public class CamaraActivity extends AppCompatActivity {
+public class CamaraActivity extends BaseActivity {
 
     private ImageView imagenPrevia;
     private Uri urlImagen;

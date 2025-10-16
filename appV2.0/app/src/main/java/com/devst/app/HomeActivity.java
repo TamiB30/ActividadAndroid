@@ -20,7 +20,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
 
     //Encapsulamientos.
@@ -43,7 +43,6 @@ public class HomeActivity extends AppCompatActivity {
                     }
                 }
             });
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +67,7 @@ public class HomeActivity extends AppCompatActivity {
         //Lanzador para pedir permiso de cámara en tiempo de ejecución.
         final ActivityResultLauncher<String>permisoCamaraLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted ->{
             if (granted){
-                alternarFlash();  //Si concede permiso, se intenta prender y apagar la linterna.
+             //Si concede permiso, se intenta prender y apagar la linterna.
             }else{
                 Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
             }
@@ -113,5 +112,6 @@ public class HomeActivity extends AppCompatActivity {
         });
     }
     private void alternarFlash() {
+
     }
 }
