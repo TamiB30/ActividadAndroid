@@ -64,6 +64,7 @@ public class HomeActivity extends AppCompatActivity {
         Button btnCamara = findViewById(R.id.btnCamara);
         Button btnConfiguracion = findViewById(R.id.btnConfiguracion);
         Button btnMapa = findViewById(R.id.btnMapa);
+        Button btnVolverLogin = findViewById(R.id.btnVolverLogin);
 
         //Recibir datos desde el login.
         emailUsuario = getIntent().getStringExtra("email_usuario");
@@ -76,6 +77,13 @@ public class HomeActivity extends AppCompatActivity {
             Intent perfil = new Intent(HomeActivity.this, PerfilActivity.class);
             perfil.putExtra("email_usuario", emailUsuario);
             editarPerfilLauncher.launch(perfil);
+        });
+
+        //Evento Explicito para volver al login.
+        btnVolverLogin.setOnClickListener(view -> {
+            Intent intent = new Intent(HomeActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
 
         //Evento Inplicito para abrir una pagina web.
@@ -117,6 +125,8 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(mapIntent);
 
         });
+
+
 
     }
 }

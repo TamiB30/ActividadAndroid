@@ -1,6 +1,9 @@
 package com.devst.app;
 
+import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
@@ -16,6 +19,7 @@ public class PerfilActivity extends AppCompatActivity {
     private String contrasennaUsuarioPerfil = "";
     private TextView editCorreoUsuario, editContrasennaUsuario;
 
+    @SuppressLint("QueryPermissionsNeeded")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,9 +28,18 @@ public class PerfilActivity extends AppCompatActivity {
         String emailRecibido = getIntent().getStringExtra("email_usuario");
         if (emailRecibido == null) emailRecibido = "";
 
+        Button btnVolverHome = findViewById(R.id.btnVolverHome);
+
         //Referencias
         editCorreoUsuario = findViewById(R.id.editCorreoUsuario);
         editCorreoUsuario.setText(emailRecibido);
+
+        //Evento Explicito para volver al Home.
+        btnVolverHome.setOnClickListener(view -> {
+            Intent intent = new Intent(PerfilActivity.this, HomeActivity.class);
+            startActivity(intent);
+            finish();
+        });
 
     }
 
