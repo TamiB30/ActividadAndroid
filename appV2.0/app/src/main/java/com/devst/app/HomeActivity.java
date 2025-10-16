@@ -6,6 +6,7 @@ import android.hardware.camera2.CameraManager;
 import android.net.Uri;
 import android.os.Bundle;
 
+import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -65,7 +66,7 @@ public class HomeActivity extends AppCompatActivity {
         tvBienvenida.setText("Bienvenido: " + emailUsuario);
 
         //Lanzador para pedir permiso de cámara en tiempo de ejecución.
-        private final ActivityResultLauncher<String>permisoCamaraLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted ->{
+        final ActivityResultLauncher<String>permisoCamaraLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted ->{
             if (granted){
                 alternarFlash();  //Si concede permiso, se intenta prender y apagar la linterna.
             }else{
@@ -92,7 +93,7 @@ public class HomeActivity extends AppCompatActivity {
             Intent correo = new Intent(Intent.ACTION_SENDTO);
             correo.setData(Uri.parse("mailto:")); //Solo para uso de correo electronico.
             correo.putExtra(Intent.EXTRA_EMAIL, new String[]{emailUsuario});
-            correo.putExtra(Intent.EXTRA_SUBJECT, "Prueba de Correo");        //Asunto del correo.
+            correo.putExtra(Intent.EXTRA_SUBJECT, "Prueba de Correo"); //Asunto del correo.
             correo.putExtra(Intent.EXTRA_TEXT, "Hola mundo desde el btn correo");
             startActivity(Intent.createChooser(correo, "Enviar correo a:"));
         });
@@ -105,9 +106,12 @@ public class HomeActivity extends AppCompatActivity {
             startActivity(Intent.createChooser(compartir, "Compartiendo: "));
         });
 
-
+        //Evento abrir camara
+        btnCamara.setOnClickListener(view -> {
+            Intent camara = new Intent(HomeActivity.this, CamaraActivity.class);
+            editarPerfilLauncher.launch(camara);
+        });
     }
-
     private void alternarFlash() {
     }
 }
