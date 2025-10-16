@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends BaseActivity {
 
 
     //Encapsulamientos.
@@ -65,9 +65,9 @@ public class HomeActivity extends AppCompatActivity {
         tvBienvenida.setText("Bienvenido: " + emailUsuario);
 
         //Lanzador para pedir permiso de cámara en tiempo de ejecución.
-        private final ActivityResultLauncher<String>permisoCamaraLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted ->{
+        final ActivityResultLauncher<String>permisoCamaraLauncher = registerForActivityResult(new ActivityResultContracts.RequestPermission(), granted ->{
             if (granted){
-                alternarFlash();  //Si concede permiso, se intenta prender y apagar la linterna.
+             //Si concede permiso, se intenta prender y apagar la linterna.
             }else{
                 Toast.makeText(this, "Permiso de cámara denegado", Toast.LENGTH_SHORT).show();
             }
@@ -104,7 +104,6 @@ public class HomeActivity extends AppCompatActivity {
             compartir.putExtra(Intent.EXTRA_TEXT, "HOLA MUNDO DESDE ANDROID");
             startActivity(Intent.createChooser(compartir, "Compartiendo: "));
         });
-
 
     }
 }

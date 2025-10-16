@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class CamaraActivity extends AppCompatActivity {
+public class CamaraActivity extends BaseActivity {
 
     private ImageView imagenPrevia;
     private Uri urlImagen;
@@ -52,7 +52,7 @@ public class CamaraActivity extends AppCompatActivity {
         setContentView(R.layout.activity_camara);
 
         Button btnTomarFoto = findViewById(R.id.btnTomarFoto);
-        imagenPrevia = findViewById(R.id.imgPreview);
+
 
         btnTomarFoto.setOnClickListener(v -> checkPermisoYTomar());
     }
