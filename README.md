@@ -2,7 +2,7 @@
 
 ## 🧾 Resumen del proyecto
 **AppIntent** es una aplicación Android educativa que demuestra el uso de **Intents explícitos e implícitos** para la comunicación entre pantallas y servicios del sistema.  
-Incluye ejemplos de navegación entre Activities, envío de correos, apertura de URLs, acceso a cámara, flash, configuración del sistema, mapas y más.  
+Incluye ejemplos de navegación entre Activities, envío de correos, apertura de URLs, acceso a cámara, configuración del Wi-Fi, mapas y más.  
 Además, implementa animaciones personalizadas y hace uso del **LocationManager** para obtener la ubicación del dispositivo.
 
 ---
