@@ -61,30 +61,6 @@ Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `f
 4. Pulsa **Cámara** → se abre `CamaraActivity`.  
 5. Pulsa **Volver** → regresa a `HomeActivity`.
 
-### Implícitos (5)
-1. **Abrir página web**  
-   - Acción: `Intent.ACTION_VIEW`  
-   - Ejemplo: Botón “Abrir sitio web” abre `https://www.todotoner.cl`  
-   - Prueba: Presionar botón -> navegador se abre con la URL  
-
-2. **Enviar correo**  
-   - Acción: `Intent.ACTION_SENDTO` con `mailto:`  
-   - Prueba: Presionar botón -> cliente de correo se abre con destinatario y asunto  
-
-3. **Compartir texto**  
-   - Acción: `Intent.ACTION_SEND`  
-   - Prueba: Presionar botón -> aparece selector de apps para compartir  
-
-4. **Abrir Google Maps**  
-   - Acción: `Intent.ACTION_VIEW` con `geo:`  
-   - Prueba: Presionar botón -> se abre Maps en la ubicación indicada  
-
-5. **Abrir ajustes de Wi-Fi**  
-   - Acción: `Settings.ACTION_WIFI_SETTINGS`  
-   - Prueba: Presionar botón -> ajustes de Wi-Fi se abren  
-
----
-
 ## Capturas de Pantalla / GIF
 
 | Pantalla | Imagen / GIF |
@@ -94,22 +70,40 @@ Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `f
 | Perfil | ![Perfil](https://github.com/user-attachments/assets/d41df796-b166-484b-9910-634a72cf5a53) | 
 | Cámara | ![Cámara](https://github.com/user-attachments/assets/f2866e4a-ffd7-4914-b502-ae3fc45a01a2) |
 
+---
 
+### 🔹 Implícitos (5)
 
+| Acción | Descripción | Componente del sistema |
+|--------|--------------|------------------------|
+| `Intent.ACTION_VIEW` | Abrir navegador web con URL | Navegador |
+| `Intent.ACTION_SENDTO` | Enviar correo | Cliente de correo |
+| `Intent.ACTION_SEND` | Compartir texto o imagen | Compartir global |
+| `Settings.ACTION_WIFI_SETTINGS` | Abrir ajustes de Wi-Fi | Configuración |
+| `MediaStore.ACTION_IMAGE_CAPTURE` | Tomar foto con cámara | Cámara del sistema |
+
+**Prueba:**
+1. En *HomeActivity*, toca **Abrir Web** → abre navegador.  
+2. Toca **Enviar Correo** → abre cliente de correo.  
+3. Toca **Compartir** → muestra el menú del sistema.  
+4. Toca **Ajustes Wi-Fi** → abre la configuración del sistema.  
+5. En *CamaraActivity*, toca **Tomar Foto** → abre la cámara.
+
+![Acciones](https://github.com/user-attachments/assets/bb6b2957-ce86-4a6e-9074-83ee839e610f)
 
 ---
 
-## APK de Prueba
+## 📱APK de Prueba
 
 - Ruta del APK debug: `app/build/outputs/apk/debug/app-debug.apk`  
-- **O** Instrucciones para compilar:  
+- **O** Si no abre directamente, puedes compilarlo nuevamente desde Android Studio: 
   1. Abrir proyecto en Android Studio.  
   2. Seleccionar `Build > Build Bundle(s) / APK(s) > Build APK(s)`  
   3. Encontrar el APK en la ruta anterior.  
 
 ---
 
-## Notas Adicionales
+## 📝 Notas Adicionales
 
 - Todas las animaciones se implementaron usando `BaseActivity` y `overridePendingTransition`.  
 - Los botones usan Material Components con colores personalizados (azul/cian/morado).  
