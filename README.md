@@ -27,7 +27,7 @@ Además, implementa animaciones personalizadas y hace uso del **LocationManager*
 **Flujo principal de pantallas (Intents explícitos):**
 Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `flip_out`) en las transiciones.
 
-<img width="841" height="389" alt="Mapa de navegación" src="https://github.com/user-attachments/assets/ba636dc6-e2f9-46f3-a98f-63cb29f8871e](https://imgur.com/GiX0MQA" />
+<img width="841" height="389" alt="Mapa de navegación" src=https://imgur.com/a/ks8IHir />
 
 
 ## 📍 Funcionalidades principales
