@@ -29,7 +29,6 @@ Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `f
 
 <img width="841" height="389" alt="Diagrama sin título drawio (1)" src="https://github.com/user-attachments/assets/5a6acd15-56e0-486d-a090-12bd2d4572c2" />
 
-
 ---
 
 ## 📍 Funcionalidades principales
@@ -46,13 +45,21 @@ Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `f
 
   ---
 
+## 🧩 Intents implementados
 
+### 🔹 Intents Explícitos (3)
 
+| Actividad origen | Destino | Descripción |
+|------------------|----------|-------------|
+| `HomeActivity` | `PerfilActivity` | Muestra los datos del usuario. |
+| `HomeActivity` | `CamaraActivity` | Permite tomar o seleccionar fotos. |
+| `PerfilActivity` | `HomeActivity` | Regresa al inicio. |
 
-
-
-
-## Intents Implementados
+**Prueba:**
+1. Inicia sesión con correo `estudiante@st.cl` y contraseña `123456`.  
+2. En Home, pulsa **Ir a Perfil** → se abre `PerfilActivity`.
+4. Pulsa **Cámara** → se abre `CamaraActivity`.  
+5. Pulsa **Volver** → regresa a `HomeActivity`.
 
 ### Implícitos (5)
 1. **Abrir página web**  
@@ -76,28 +83,18 @@ Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `f
    - Acción: `Settings.ACTION_WIFI_SETTINGS`  
    - Prueba: Presionar botón -> ajustes de Wi-Fi se abren  
 
-### Explícitos (3)
-1. **Ir a PerfilActivity con resultado**  
-   - Prueba: Presionar botón “Ir a Perfil” -> editar nombre -> volver a Home -> texto actualizado  
-
-2. **Abrir CamaraActivity**  
-   - Prueba: Presionar botón “Cámara del celular” -> se abre la cámara integrada  
-
-3. **Volver a LoginActivity**  
-   - Prueba: Presionar botón “Volver” -> regresa a la pantalla de login  
-
 ---
 
 ## Capturas de Pantalla / GIF
 
 | Pantalla | Imagen / GIF |
 |----------|--------------|
-| Login | ![Login](screenshots/login.png) |
-| Home con botones | ![Home](screenshots/home.png) |
-| Perfil de usuario | ![Perfil](screenshots/perfil.png) |
-| Cámara integrada | ![Camara](screenshots/camara.png) |
+| Login | ![Diseño sin título](https://github.com/user-attachments/assets/3210c82d-5af2-4aa9-98dd-9f8994b4f5fd)|
+| Home | ![Home](screenshots/home.png) |
+| Perfil | ![Perfil](screenshots/perfil.png) |
+| Cámara | ![Camara](screenshots/camara.png) |
 
-> Reemplaza los placeholders con tus imágenes o GIFs reales.
+
 
 ---
 
