@@ -89,10 +89,11 @@ Cada Activity extiende de `BaseActivity`, que aplica animaciones (`flip_in` y `f
 
 | Pantalla | Imagen / GIF |
 |----------|--------------|
-| Login | ![Login](https://github.com/user-attachments/assets/82c22f9b-7ba8-4ae3-a401-ffb7123b18e7)|
-| Home | ![Home](screenshots/home.png) |
-| Perfil | ![Perfil](screenshots/perfil.png) |
-| Cámara | ![Camara](screenshots/camara.png) |
+| Login | ![Login](https://github.com/user-attachments/assets/0b8fe1af-3124-46dc-adc6-7bd82c75107e) |
+| Home | ![Home](https://github.com/user-attachments/assets/c8732fb6-882f-4ca2-9797-4a6ba9f31140) |
+| Perfil | ![Perfil](https://github.com/user-attachments/assets/d41df796-b166-484b-9910-634a72cf5a53) | 
+| Cámara | ![Cámara](https://github.com/user-attachments/assets/f2866e4a-ffd7-4914-b502-ae3fc45a01a2) |
+
 
 
 
